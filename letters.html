@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arts</title>
+    <style>
+        body {
+            font-family: serif;
+            color: aliceblue;
+            text-align: center;
+            background: black; /* Updated background property */
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #ff0000;
+        }
+
+        /* Style to make images display side by side with arrow */
+        .slider-container {
+            overflow: hidden;
+            width: 90%; /* Adjust the width of the slider */
+            margin: auto;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 80%;
+            height: auto;
+        }
+
+        /* Navigation buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Button hover effect */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="heart2.html">⮜⮜</a>
+    </nav>
+    <div class="slider-container">
+        <div class="slides">
+                        <div class="slide">
+                            <img src="hee.png" alt="1">
+                        </div>
+                        <div class="slide">
+                            <img src="Ally.png" alt="Ally">
+                        </div>
+                        <div class="slide">
+                            <img src="Chlo.png" alt="Chlo">
+                        </div>
+                        <div class="slide">
+                            <img src="Ellie.png" alt="Ellie">
+                        </div>
+                        <div class="slide">
+                            <img src="Hannah.png" alt="Hannah">
+                        </div>
+                        <div class="slide">
+                            <img src="Kay.png" alt="Kay">
+                        </div>
+                        <div class="slide">
+                            <img src="Kimora.png" alt="Kimora">
+                        </div>
+                        <div class="slide">
+                            <img src="Kypp.png" alt="Kypp">
+                        </div>
+                        <div class="slide">
+                            <img src="Lust.png" alt="Lust">
+                        </div>
+                        <div class="slide">
+                            <img src="Mish.png" alt="Mish">
+                        </div>
+                        <div class="slide">
+                            <img src="Rose.png" alt="Rose">
+                        </div>
+                        <div class="slide">
+                            <img src="Rue.png" alt="Rue">
+                        </div>
+                        <div class="slide">
+                            <img src="Sahiti.png" alt="Sahi">
+                        </div>
+                        <div class="slide">
+                            <img src="Tiff.png" alt="Tiff">
+                        </div>
+                        <div class="slide">
+                            <img src="tresna.png" alt="Tres">
+                        </div>
+                        <div class="slide">
+                            <img src="Tsuni.png" alt="Tsu">
+                        </div>
+                        <div class="slide">
+                            <img src="Val.png" alt="Val">
+                        </div>
+                        <div class="slide">
+                            <img src="Zoe.png" alt="Zoe">
+                        </div>
+        
+            
+            <!-- Your slides here -->
+        </div>
+        
+        <div class="prev" onclick="changeSlide(-1)">❮</div>
+        <div class="next" onclick="changeSlide(1)">❯</div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        function changeSlide(direction) {
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            }
+
+            const translateValue = -100 * currentIndex + '%';
+            slides.style.transform = 'translateX(' + translateValue + ')';
+        }
+    </script>
+
+</body>
+</html>
